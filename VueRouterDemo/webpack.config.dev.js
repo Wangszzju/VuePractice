@@ -1,11 +1,13 @@
 let path = require('path');
 
 const webpackConfig = {
-  entry: './src/main.js',  // 指定分析入口文件
+  entry: ['./src/main.js'],  // 指定分析入口文件
   output: {
     filename: 'bundle.js',  // filename输出文件名
-    path: path.resolve(__dirname, 'dist')  // 输出目录
+    path: path.resolve(__dirname, 'build')  // 输出目录
   },
+  devtool:'cheap-eval-source-map',
+  plugins:[],
   module:{
     rules: [
       { test: /\.js$/,
