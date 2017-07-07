@@ -1,6 +1,9 @@
-'use strict'
-const name = 'World 3';
-let para = document.createElement('p');
-para.appendChild(document.createTextNode(`Hello ${name}！`));
-document.getElementById('app').appendChild(para)
-window.say = 'Kobe 1';
+'use strict';
+
+import App from './App.vue';
+import Vue from 'vue';
+
+const vm = new Vue({
+  el: "#app",
+  render: h => h(App),
+});

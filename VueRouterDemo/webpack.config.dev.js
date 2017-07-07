@@ -7,6 +7,11 @@ const webpackConfig = {
     path: path.resolve(__dirname, 'build')  // 输出目录
   },
   devtool:'cheap-eval-source-map',
+  resolve:{
+    alias: {
+      'vue$':'vue/dist/vue.esm.js'
+    }
+  },
   plugins:[],
   module:{
     rules: [
@@ -17,7 +22,9 @@ const webpackConfig = {
       },{
         test:/\.css$/,
         loaders: ['style-loader','css-loader']
-
+      },{
+        test:/\.vue$/,
+        loader: 'vue-loader'
       }
     ]
   }
